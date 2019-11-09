@@ -7,10 +7,12 @@ on:
     
 
 jobs:
-  build:
-
+  lint:
+     
     runs-on: ubuntu-latest
 
     steps:
     - uses: "bltavares/actions/prettier@master"
     - name: prettier JavaScript file
+    - with: 
+        secrets: "GITHUB_TOKEN"
