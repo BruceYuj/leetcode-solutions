@@ -1,18 +1,20 @@
-name: CI
-
-on: 
-  push:
-    paths:
-    - '**.js'
-    
+name: Greet Everyone
+# This workflow is triggered on pushes to the repository.
+on: [push]
 
 jobs:
-  lint:
-     
+  build:
+    # Job name is Greeting
+    name: Greeting
+    # This job runs on Linux
     runs-on: ubuntu-latest
-
     steps:
-    - uses: "bltavares/actions/prettier@master"
-    - name: prettier JavaScript file
-    - with: 
-        secrets: "GITHUB_TOKEN"
+      # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
+      - name: Hello world
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: 'Mona the Octocat'
+        id: hello
+      # This step prints an output (time) from the previous step's action.
+      - name: Echo the greeting's time
+        run: echo 'The time was ${{ steps.hello.outputs.time }}.'
