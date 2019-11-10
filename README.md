@@ -1,3 +1,4 @@
+https://github.com/BruceYuj/leetcode-solutions/workflows/Greet%20Everyone/badge.svg
 # leetcode-solutions
 存放《LeetCode题解书》的资料，比如各种语言实现，图片等。
 
